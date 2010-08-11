@@ -35,6 +35,22 @@ Feature: Manage_stock
       |       50         |  vodka            |        10        |     40         |
       |       75         |  wisky            |        22        |     53         |  
   
+    
+  @wip
+  Scenario Outline: Increase a number of bottle to the stock of one alcool
+    Given I have a <number_of_bottles> of "<name_of_alcool>"
+    And I am on the list of alcools
+    And I fill in "quantity" with "<number_to_increased>"
+    When I press "increase"
+    Then I should see "<rest_of_bottles>"
+    
+    
+    Examples:
+    | number_of_bottles | name_of_alcool | number_to_increased | rest_of_bottles |
+    |         5         | vodka          |        50           |       55        |
+    |         3         | wisky          |        60           |       63        |
+
+
   # @wip
   #   Scenario: decrease the number of bottles of one alcool
   #     Given I have 50 bottles of "vodka"
