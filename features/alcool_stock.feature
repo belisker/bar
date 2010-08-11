@@ -3,7 +3,6 @@ Feature: Manage_stock
   As a barman
   I want to buy time
   
-  @wip
   Scenario Outline: Adding alcool into a list
     Given I have no alcool in the list
     And I am on the list of alcools
@@ -20,23 +19,21 @@ Feature: Manage_stock
       | name_alcool | number_bottle |
       |  vodka      |     50        |
       |  wisky      |     75        |
+      
     
-    
-  @wip
-    Scenario Outline: Decrease a number of bottles of one alcool
-      Given I have <number_of_bottle> bottles of "<name_of_alcool>"
-      And I am on the list of alcools
-      And I fill in "quantity" with "<number_decreased>"
-      When I press "decrease"
-      Then I should see "<rest_of_bottle>"
+  Scenario Outline: Decrease a number of bottles of one alcool
+    Given I have <number_of_bottle> bottles of "<name_of_alcool>"
+    And I am on the list of alcools
+    And I fill in "quantity" with "<number_decreased>"
+    When I press "decrease"
+    Then I should see "<rest_of_bottle>"
     
     Examples:
       | number_of_bottle | name_of_alcool    | number_decreased | rest_of_bottle |
       |       50         |  vodka            |        10        |     40         |
       |       75         |  wisky            |        22        |     53         |  
   
-    
-  @wip
+
   Scenario Outline: Increase a number of bottle to the stock of one alcool
     Given I have a <number_of_bottles> of "<name_of_alcool>"
     And I am on the list of alcools
