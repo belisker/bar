@@ -16,3 +16,13 @@ Given /^I have (\d+) bottles of "([^"]*)"$/ do |number, alcool_name|
   alcool.quantity = number
   alcool.save
 end
+
+Given /^I have a (\d+) of "([^"]*)"$/ do |number, name_alcool|
+  alcool = Alcool.where(:name => name_alcool).first
+  unless
+    alcool = Alcool.new
+    alcool.name = name_alcool
+  end
+  alcool.quantity = number
+  alcool.save
+end
