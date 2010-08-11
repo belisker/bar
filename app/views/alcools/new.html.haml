@@ -1,0 +1,19 @@
+%h2 Add Alcool
+
+= form_for @alcool do |f|
+	.field
+		= f.label :name
+		%br
+		= f.text_field "name"
+	.field
+		= f.label :quantity
+		%br
+		= f.text_field "quantity", "size" => 3
+	.field
+		= f.submit
+
+%br
+= link_to 'Back', alcools_path
+
+
+

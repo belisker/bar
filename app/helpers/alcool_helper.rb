@@ -1,0 +1,2 @@
+module AlcoolHelper
+end

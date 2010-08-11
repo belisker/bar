@@ -1,0 +1,625 @@
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "alcools" WHERE 1=1
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered collection (0.0ms)
+Rendered alcools/index.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Rendered alcools/new.html.haml within layouts/application (31.8ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"vodka", "quantity"=>"50"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:04:28.240869', 'vodka', 50, '2010-08-11 10:04:28.240869')
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 12ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.3ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (6.6ms)
+Rendered alcools/index.html.haml within layouts/application (10.5ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.5ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "alcools"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "alcools" WHERE 1=1[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered collection (0.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"wisky", "quantity"=>"75"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:04:28.300929', 'wisky', 75, '2010-08-11 10:04:28.300929')[0m
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.7ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "alcools"[0m
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:04:28.357294', 'vodka', 50, '2010-08-11 10:04:28.357294')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (4.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"10", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "alcools" SET "quantity" = 40, "updated_at" = '2010-08-11 10:04:28.380633' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 6ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.7ms)
+Completed 200 OK in 112ms (Views: 111.1ms | ActiveRecord: 0.5ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:04:28.505871', 'wisky', 75, '2010-08-11 10:04:28.505871')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.5ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"22", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 53, "updated_at" = '2010-08-11 10:04:28.527944' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 5ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (5.5ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:04:28.558183', NULL, 5, '2010-08-11 10:04:28.558183')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.9ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"50", "_snowman"=>"\342\230\203", "increase"=>"increase", "id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "alcools" SET "quantity" = 55, "updated_at" = '2010-08-11 10:04:28.579765' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 6ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (4.1ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:04:28.602517', NULL, 3, '2010-08-11 10:04:28.602517')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.4ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"60", "_snowman"=>"\342\230\203", "increase"=>"increase", "id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 63, "updated_at" = '2010-08-11 10:04:28.624435' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:04:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (4.8ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "alcools" WHERE 1=1
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered collection (0.0ms)
+Rendered alcools/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Rendered alcools/new.html.haml within layouts/application (15.8ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"vodka", "quantity"=>"50"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:22:21.118714', 'vodka', 50, '2010-08-11 10:22:21.118714')
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 11ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (7.0ms)
+Rendered alcools/index.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "alcools"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "alcools" WHERE 1=1[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered collection (0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"wisky", "quantity"=>"75"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:22:21.176768', 'wisky', 75, '2010-08-11 10:22:21.176768')[0m
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.6ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "alcools"[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:22:21.215474', 'vodka', 50, '2010-08-11 10:22:21.215474')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.8ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"10", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.6ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 40, "updated_at" = '2010-08-11 10:22:21.239004' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 5ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.9ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.9ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:22:21.364356', 'wisky', 75, '2010-08-11 10:22:21.364356')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.6ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"22", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 53, "updated_at" = '2010-08-11 10:22:21.386388' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:22:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (5.1ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "alcools" WHERE 1=1
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered collection (0.0ms)
+Rendered alcools/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Rendered alcools/new.html.haml within layouts/application (16.8ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"vodka", "quantity"=>"50"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:29:48.430570', 'vodka', 50, '2010-08-11 10:29:48.430570')
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 10ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (6.6ms)
+Rendered alcools/index.html.haml within layouts/application (10.5ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "alcools"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "alcools" WHERE 1=1[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered collection (0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"wisky", "quantity"=>"75"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:29:48.489685', 'wisky', 75, '2010-08-11 10:29:48.489685')[0m
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (4.9ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "alcools"[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:29:48.530126', 'vodka', 50, '2010-08-11 10:29:48.530126')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.2ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"10", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 40, "updated_at" = '2010-08-11 10:29:48.553609' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 6ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.8ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 10:29:48.678103', 'wisky', 75, '2010-08-11 10:29:48.678103')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.4ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"22", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 53, "updated_at" = '2010-08-11 10:29:48.700217' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 12:29:48 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (5.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "alcools" WHERE 1=1
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered collection (0.0ms)
+Rendered alcools/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Rendered alcools/new.html.haml within layouts/application (16.5ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"vodka", "quantity"=>"50"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 11:24:13.605478', 'vodka', 50, '2010-08-11 11:24:13.605478')
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 10ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (6.6ms)
+Rendered alcools/index.html.haml within layouts/application (10.2ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "alcools"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "alcools" WHERE 1=1[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered collection (0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"wisky", "quantity"=>"75"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 11:24:13.663762', 'wisky', 75, '2010-08-11 11:24:13.663762')[0m
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (4.4ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "alcools"[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 11:24:13.702146', 'vodka', 50, '2010-08-11 11:24:13.702146')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.4ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"10", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 40, "updated_at" = '2010-08-11 11:24:13.725892' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 6ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.8ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 11:24:13.850132', 'wisky', 75, '2010-08-11 11:24:13.850132')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.6ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"22", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 53, "updated_at" = '2010-08-11 11:24:13.872153' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 5ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 13:24:13 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (5.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "alcools" WHERE 1=1
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered collection (0.0ms)
+Rendered alcools/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Rendered alcools/new.html.haml within layouts/application (15.8ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"vodka", "quantity"=>"50"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 12:10:55.707476', 'vodka', 50, '2010-08-11 12:10:55.707476')
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 10ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (6.5ms)
+Rendered alcools/index.html.haml within layouts/application (10.3ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "alcools"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "alcools" WHERE 1=1[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered collection (0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"wisky", "quantity"=>"75"}, "commit"=>"Create Alcool", "_snowman"=>"\342\230\203"}
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 12:10:55.765372', 'wisky', 75, '2010-08-11 12:10:55.765372')[0m
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.6ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "alcools"[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 12:10:55.806869', 'vodka', 50, '2010-08-11 12:10:55.806869')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.7ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"10", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 40, "updated_at" = '2010-08-11 12:10:55.831374' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 6ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.5ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "updated_at") VALUES ('2010-08-11 12:10:55.957553', 'wisky', 75, '2010-08-11 12:10:55.957553')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.5ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"22", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "alcools" SET "quantity" = 53, "updated_at" = '2010-08-11 12:10:55.979494' WHERE ("alcools"."id" = 1)
+Redirected to http://www.example.com/alcools
+Completed 302 Found in 4ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Wed Aug 11 14:10:55 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (5.4ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.4ms)

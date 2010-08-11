@@ -1,0 +1,34 @@
+%b Alcool :
+= alcool.name
+
+%b | Quantity :
+= alcool.quantity
+- if alcool.quantity <= 5
+  %br
+  %b NEED :
+  = alcool.name
+  %br
+  
+= form_for alcool do |f|
+  .field
+    = f.label :bottles
+    = text_field_tag("quantity", params[:quantity] || "1")
+  .field
+    = f.submit "increase", :name => :increase
+    = f.submit "decrease", :name => :decrease
+%br
+
+/ = form_for alcool do |f|
+/   .field
+/     = f.label :decrease
+/     = f.text_field "temp", "size" => 3 
+/   .field
+/     = f.submit
+/ 
+/ = form_for alcool do |f|
+/   .field
+/     = f.label :increase
+/     = f.text_field "temp", "size" => 3
+/   .field
+/     = f.submit
+/ %br
