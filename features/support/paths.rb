@@ -12,7 +12,7 @@ module NavigationHelpers
       '/'
     when /the list of alcools/
       alcools_path
-    when /send command/
+    when /the page send command/
       command_path
 
     # Add more mappings here.

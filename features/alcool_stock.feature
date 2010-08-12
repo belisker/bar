@@ -52,7 +52,7 @@ Feature: Manage_stock
     Given I have a <number_of_bottles> of "<name_of_alcool>" 
     And I am on the list of alcools
     When I have a <number_of_bottles> of "<name_of_alcool>" less than <number_limite>
-    Then I am on the page send command
+    Then I should be on the page send command
     And I fill in "quantity_command" whit <number_to_command>
     And I press "command"
     
