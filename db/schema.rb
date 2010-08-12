@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20100809094844) do
     t.string   "name"
     t.integer  "quantity"
     t.integer  "quantity_command"
+    t.integer   "limit"
   end
 
 end
