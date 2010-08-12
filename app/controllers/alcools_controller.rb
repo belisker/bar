@@ -31,7 +31,7 @@ class AlcoolsController < ApplicationController
     end
     @alcool.save
     if @alcool.quantity <= 5
-      redirect_to alcools_command_path
+      redirect_to command_path
     else  
       redirect_to alcools_path
     end
@@ -41,9 +41,13 @@ class AlcoolsController < ApplicationController
     redirect_to alcools_path
   end
   
+  # def order_command
+  #     @alcool = Alcool.find(params[:id])
+  #     render :action => "send_mail"
+  #   end
+    
   def command
     @alcool = Alcool.find(params[:id])
-    @alcool = Alcool.create(params[:id])
   end
 
 end

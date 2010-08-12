@@ -2,11 +2,11 @@
   
 = @alcool.name
   
-= form_for @alcool, :url => { :action => "command"} do |f|
+= form_for @alcool, :url => { :action => "send_mail"} do |f|
   .field
     = f.label :quantity_command
     = text_field_tag :quantity_command
-  .field
+  .field 
     = f.submit
 
     
