@@ -36,12 +36,3 @@ When /^I have a (\d+) of "([^"]*)" less than (\d+)$/ do |number, name_alcool, li
   alcool.quantity = number
   alcool.quantity.should < limite.to_i
 end
-
-Then /^I fill in "([^"]*)" whit (\d+)$/ do |quantity_command, number_command|
-  alcool = Alcool.where(:name => name_alcool).first
-  unless
-     alcool = Alcool.new
-     alcool.name = name_alcool
-  end
-  alcool.quantity_command = number_command
-end
