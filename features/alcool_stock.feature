@@ -47,7 +47,20 @@ Feature: Manage_stock
     |         5         | vodka          |        50           |       55        |
     |         3         | wisky          |        60           |       63        |
 
-
+@wip
+  Scenario Outline: Send a email to the alcool provider
+    Given I have a <number_of_bottles> of "<name_of_alcool>" 
+    And I am on the list of alcools
+    When I have a <number_of_bottles> of "<name_of_alcool>" less than <number_limite>
+    Then I am on the page send command
+    And I fill in "quantity_command" whit <number_to_command>
+    And I press "command"
+    
+    Examples:
+    | number_of_bottles | name_of_alcool | number_limite | number_to_command |
+    |        8          |     vodka      |      10       |        40         |
+    |        6          |     wisky      |       8       |        15         |
+  
   # @wip
   #   Scenario: decrease the number of bottles of one alcool
   #     Given I have 50 bottles of "vodka"
