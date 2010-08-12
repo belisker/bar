@@ -1,8 +1,7 @@
 ManageBar::Application.routes.draw do
   root :to => "alcools#index"
   resources :alcools    
-  match '/alcools/:id/command' => 'alcools#command', :as => 'command' 
-  # match "/alcool/:id" => redirect("/alcool/%{id}/command")
+  match '/alcools/:id/command' => 'alcools#command', :as => 'command'
     
   # purchase_url(:id => product.id)
   # The priority is based upon order of creation:
