@@ -1940,6 +1940,352 @@ Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.8ms)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+<<<<<<< HEAD
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:45:27.494519', NULL, 8, NULL, '2010-08-12 10:45:27.494519')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 12:45:27 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.9ms)
+Rendered alcools/index.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 1.2ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:45:27.536788', NULL, 6, NULL, '2010-08-12 10:45:27.536788')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 12:45:27 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (3.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.7ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:50:22.341409', NULL, 8, NULL, '2010-08-12 10:50:22.341409')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 12:50:22 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.3ms)
+Rendered alcools/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.7ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:50:22.378327', NULL, 8, NULL, '2010-08-12 10:50:22.378327')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:50:22.389711', NULL, 6, NULL, '2010-08-12 10:50:22.389711')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 12:50:22 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.3ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 1.5ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:50:22.403772', NULL, 6, NULL, '2010-08-12 10:50:22.403772')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:52:54.489573', NULL, 8, NULL, '2010-08-12 10:52:54.489573')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 12:52:54 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (8.1ms)
+Rendered alcools/index.html.haml within layouts/application (13.4ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:52:54.527014', NULL, 8, NULL, '2010-08-12 10:52:54.527014')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:52:54.534692', NULL, 6, NULL, '2010-08-12 10:52:54.534692')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 12:52:54 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.3ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:52:54.548522', NULL, 6, NULL, '2010-08-12 10:52:54.548522')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 11:02:28.076483', NULL, 8, NULL, '2010-08-12 11:02:28.076483')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 13:02:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (23.9ms)
+Rendered alcools/index.html.haml within layouts/application (29.6ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 1.2ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 11:02:28.149087', NULL, 8, NULL, '2010-08-12 11:02:28.149087')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 11:02:28.158522', NULL, 6, NULL, '2010-08-12 11:02:28.158522')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 13:02:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.0ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 11:02:28.172559', NULL, 6, NULL, '2010-08-12 11:02:28.172559')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:51:03.740333', NULL, 8, NULL, '2010-08-12 12:51:03.740333')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 14:51:03 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (58.0ms)
+Rendered alcools/index.html.haml within layouts/application (63.8ms)
+Completed 200 OK in 73ms (Views: 71.4ms | ActiveRecord: 1.3ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:51:03.902980', NULL, 8, NULL, '2010-08-12 12:51:03.902980')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:51:03.913006', NULL, 6, NULL, '2010-08-12 12:51:03.913006')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 14:51:03 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.8ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.9ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:51:03.926974', NULL, 6, NULL, '2010-08-12 12:51:03.926974')[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:52:58.218204', NULL, 8, NULL, '2010-08-12 12:52:58.218204')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 14:52:58 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (19.4ms)
+Rendered alcools/index.html.haml within layouts/application (24.4ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 1.2ms)
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:52:58.277809', NULL, 8, NULL, '2010-08-12 12:52:58.277809')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:52:58.286323', NULL, 6, NULL, '2010-08-12 12:52:58.286323')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 14:52:58 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:52:58.300186', NULL, 6, NULL, '2010-08-12 12:52:58.300186')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:58:27.214515', NULL, 8, NULL, '2010-08-12 12:58:27.214515')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 14:58:27 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.9ms)
+Rendered alcools/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 1.2ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:58:27.252945', NULL, 8, NULL, '2010-08-12 12:58:27.252945')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:58:27.260405', NULL, 6, NULL, '2010-08-12 12:58:27.260405')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 14:58:27 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.5ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 12:58:27.274160', NULL, 6, NULL, '2010-08-12 12:58:27.274160')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:01:24.698324', NULL, 8, NULL, '2010-08-12 13:01:24.698324')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:01:24 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.0ms)
+Rendered alcools/index.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:01:24.734925', NULL, 8, NULL, '2010-08-12 13:01:24.734925')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:01:24.742149', NULL, 6, NULL, '2010-08-12 13:01:24.742149')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:01:24 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.5ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:01:24.755927', NULL, 6, NULL, '2010-08-12 13:01:24.755927')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:09:23.746735', NULL, 8, NULL, '2010-08-12 13:09:23.746735')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:09:23 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (8.6ms)
+Rendered alcools/index.html.haml within layouts/application (13.8ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 1.2ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:09:23.789072', NULL, 8, NULL, '2010-08-12 13:09:23.789072')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:09:23.798992', NULL, 6, NULL, '2010-08-12 13:09:23.798992')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:09:23 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.8ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.9ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:09:23.815294', NULL, 6, NULL, '2010-08-12 13:09:23.815294')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:14.750166', NULL, 8, NULL, '2010-08-12 13:15:14.750166')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:15:14 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.0ms)
+Rendered alcools/index.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:14.787457', NULL, 8, NULL, '2010-08-12 13:15:14.787457')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:14.802480', NULL, 6, NULL, '2010-08-12 13:15:14.802480')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:15:14 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.9ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.9ms)
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:14.816387', NULL, 6, NULL, '2010-08-12 13:15:14.816387')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:37.560500', NULL, 8, NULL, '2010-08-12 13:15:37.560500')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:15:37 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.8ms)
+Rendered alcools/index.html.haml within layouts/application (11.3ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:37.598266', NULL, 8, NULL, '2010-08-12 13:15:37.598266')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:37.605976', NULL, 6, NULL, '2010-08-12 13:15:37.605976')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:15:37 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.6ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:15:37.619632', NULL, 6, NULL, '2010-08-12 13:15:37.619632')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:33:01.340168', NULL, 8, NULL, '2010-08-12 13:33:01.340168')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:33:01 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.0ms)
+Rendered alcools/index.html.haml within layouts/application (11.9ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:33:01.377788', NULL, 8, NULL, '2010-08-12 13:33:01.377788')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:33:01.385194', NULL, 6, NULL, '2010-08-12 13:33:01.385194')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:33:01 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.4ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:33:01.399199', NULL, 6, NULL, '2010-08-12 13:33:01.399199')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:47:51.603877', NULL, 8, NULL, '2010-08-12 13:47:51.603877')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:47:51 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.1ms)
+Rendered alcools/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:47:51.641013', NULL, 8, NULL, '2010-08-12 13:47:51.641013')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:47:51.648468', NULL, 6, NULL, '2010-08-12 13:47:51.648468')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:47:51 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.1ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:47:51.663499', NULL, 6, NULL, '2010-08-12 13:47:51.663499')[0m
+=======
   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:45:14.711575', NULL, 8, NULL, '2010-08-12 10:45:14.711575')[0m
 
 
@@ -1960,11 +2306,118 @@ Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 12:45:14 +0200 2010
 Rendered alcools/_alcool.html.haml (3.4ms)
 Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.8ms)
   [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+>>>>>>> 78a9dfb0dfec6576dea497b2a8c510efb1933efd
   [1m[36mSQL (0.4ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+<<<<<<< HEAD
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:50:02.776849', NULL, 8, NULL, '2010-08-12 13:50:02.776849')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:50:02 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.9ms)
+Rendered alcools/index.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:50:02.813809', NULL, 8, NULL, '2010-08-12 13:50:02.813809')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:50:02.821859', NULL, 6, NULL, '2010-08-12 13:50:02.821859')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:50:02 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.3ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.9ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 1.5ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:50:02.837137', NULL, 6, NULL, '2010-08-12 13:50:02.837137')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:51:38.734889', NULL, 8, NULL, '2010-08-12 13:51:38.734889')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:51:38 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.9ms)
+Rendered alcools/index.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 1.4ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:51:38.772269', NULL, 8, NULL, '2010-08-12 13:51:38.772269')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:51:38.780198', NULL, 6, NULL, '2010-08-12 13:51:38.780198')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:51:38 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.4ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:51:38.793882', NULL, 6, NULL, '2010-08-12 13:51:38.793882')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:53:23.499404', NULL, 8, NULL, '2010-08-12 13:53:23.499404')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:53:23 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.3ms)
+Rendered alcools/index.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 1.1ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:53:23.544759', NULL, 8, NULL, '2010-08-12 13:53:23.544759')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:53:23.552568', NULL, 6, NULL, '2010-08-12 13:53:23.552568')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:53:23 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.3ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.9ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.9ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:53:23.567075', NULL, 6, NULL, '2010-08-12 13:53:23.567075')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:59:00.770723', NULL, NULL, 8, NULL, '2010-08-12 13:59:00.770723')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:59:00 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.1ms)
+Rendered alcools/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 1.3ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:59:00.808264', NULL, NULL, 8, NULL, '2010-08-12 13:59:00.808264')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:59:00.817516', NULL, NULL, 6, NULL, '2010-08-12 13:59:00.817516')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:59:00 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.6ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.8ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 1.2ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:59:00.831440', NULL, NULL, 6, NULL, '2010-08-12 13:59:00.831440')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+=======
   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 10:53:39.526046', NULL, 8, NULL, '2010-08-12 10:53:39.526046')[0m
 
 
@@ -1986,10 +2439,97 @@ Rendered alcools/_alcool.html.haml (3.4ms)
 Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.8ms)
   [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+>>>>>>> 78a9dfb0dfec6576dea497b2a8c510efb1933efd
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+<<<<<<< HEAD
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:00:24.093196', NULL, NULL, 8, NULL, '2010-08-12 14:00:24.093196')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:00:24 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.9ms)
+Rendered alcools/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 1.4ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:00:24.130959', NULL, NULL, 8, NULL, '2010-08-12 14:00:24.130959')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:00:24.139113', NULL, NULL, 6, NULL, '2010-08-12 14:00:24.139113')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:00:24 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (2.9ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.9ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:00:24.153120', NULL, NULL, 6, NULL, '2010-08-12 14:00:24.153120')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:01:26.406326', NULL, NULL, 8, NULL, '2010-08-12 14:01:26.406326')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:01:26 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.7ms)
+Rendered alcools/index.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 1.3ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:01:26.445453', NULL, NULL, 8, NULL, '2010-08-12 14:01:26.445453')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:01:26.453456', NULL, NULL, 6, NULL, '2010-08-12 14:01:26.453456')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:01:26 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.9ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:01:26.466779', NULL, NULL, 6, NULL, '2010-08-12 14:01:26.466779')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:03:03.292089', NULL, NULL, 8, NULL, '2010-08-12 14:03:03.292089')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:03:03 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.0ms)
+Rendered alcools/index.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 1.3ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:03:03.329698', NULL, NULL, 8, NULL, '2010-08-12 14:03:03.329698')
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:03:03.337222', NULL, NULL, 6, NULL, '2010-08-12 14:03:03.337222')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:03:03 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (3.5ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:03:03.351075', NULL, NULL, 6, NULL, '2010-08-12 14:03:03.351075')[0m
+=======
   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 13:03:53.113989', NULL, 8, NULL, '2010-08-12 13:03:53.113989')[0m
 
 
@@ -2010,6 +2550,7 @@ Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:03:53 +0200 2010
 Rendered alcools/_alcool.html.haml (3.5ms)
 Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.8ms)
   [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+<<<<<<< HEAD
   [1m[36mSQL (0.4ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
@@ -2310,3 +2851,6 @@ Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 15:32:39 +0200 2010
 Rendered alcools/_alcool.html.haml (3.5ms)
 Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.1ms)
   [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+=======
+>>>>>>> 78a9dfb0dfec6576dea497b2a8c510efb1933efd
+>>>>>>> ade6ffda1c5999c2f778c03d2106333259426a4b
