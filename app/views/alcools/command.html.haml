@@ -1,0 +1,12 @@
+%h1 Passez votre commande pour :
+  
+= @alcool.name
+  
+= form_for @alcool, :url => { :action => "command"} do |f|
+  .field
+    = f.label :quantity_command
+    = text_field_tag :quantity_command
+  .field
+    = f.submit
+
+    
