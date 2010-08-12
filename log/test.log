@@ -2551,3 +2551,30 @@ Rendered alcools/_alcool.html.haml (3.5ms)
 Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.8ms)
   [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
 >>>>>>> 78a9dfb0dfec6576dea497b2a8c510efb1933efd
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:29:51.791884', NULL, NULL, 8, NULL, '2010-08-12 14:29:51.791884')[0m
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:29:51 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.9ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.9ms)
+Rendered alcools/index.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 1.9ms)
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'vodka') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:29:51.830659', NULL, NULL, 8, NULL, '2010-08-12 14:29:51.830659')
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:29:51.838371', NULL, NULL, 6, NULL, '2010-08-12 14:29:51.838371')
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:29:51 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (2.9ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.8ms)
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."name" = 'wisky') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:29:51.852559', NULL, NULL, 6, NULL, '2010-08-12 14:29:51.852559')[0m

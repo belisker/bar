@@ -13,7 +13,7 @@ module NavigationHelpers
     when /the list of alcools/
       alcools_path
     when /the command page of the only alcool below the limit/
-      command_path(Alcool.where(:quantity <= :limit))
+      command_path(Alcool.where(:quantity < :limit))
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
