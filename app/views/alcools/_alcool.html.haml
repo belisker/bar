@@ -3,12 +3,7 @@
 
 %b | Quantity :
 = alcool.quantity
-- if alcool.quantity <= 5
-  %br
-  %b NEED :
-  = alcool.name
-  %br
-  
+
 = form_for alcool do |f|
   .field
     = f.label :bottles

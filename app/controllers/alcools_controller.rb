@@ -30,12 +30,20 @@ class AlcoolsController < ApplicationController
       @alcool.quantity -= params[:quantity].to_i
     end
     @alcool.save
+    if @alcool.quantity <= 5
+      redirect_to alcools_command_path
+    else  
+      redirect_to alcools_path
+    end
+  end
+
+  def send_mail
     redirect_to alcools_path
   end
   
-  def script
-    # if @alcool.quantity <= 5
-      
+  def command
+    @alcool = Alcool.find(params[:id])
+    @alcool = Alcool.create(params[:id])
   end
 
 end
