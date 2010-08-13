@@ -36,20 +36,18 @@ class AlcoolsController < ApplicationController
       redirect_to alcools_path
     end
   end
-
-  def send_mail
-    recipient = params[:email]
-      subject = params[:subject]
-      message = params[:message]
-      Emailer.deliver_contact(recipient, subject, message)
-      return if request.xhr?
-        render :text => 'Message sent successfully'
-  end
   
   # def order_command
   #     @alcool = Alcool.find(params[:id])
   #     render :action => "send_mail"
   #   end
+    
+  def send_mail
+  # if @alcool.save
+    redirect_to alcools_path
+    UserMailer.order_alcool(@alcool).deliver
+  # end
+  end  
     
   def command
     @alcool = Alcool.find(params[:id])

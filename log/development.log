@@ -7263,6 +7263,28 @@ Migrating to CreateAlcools (20100809094844)
   [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100809094844')[0m
 =======
 >>>>>>> ade6ffda1c5999c2f778c03d2106333259426a4b
+<<<<<<< HEAD
+
+
+Started GET "/posts" for 127.0.0.1 at Thu Aug 12 16:44:55 +0200 2010
+
+ActionController::RoutingError (No route matches "/posts"):
+  
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/alcool" for 127.0.0.1 at Thu Aug 12 16:45:10 +0200 2010
+
+ActionController::RoutingError (No route matches "/alcool"):
+  
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:45:15 +0200 2010
+  Processing by AlcoolsController#index as HTML
+=======
 >>>>>>> 6405f9b071e406e80d5d807579f84abc10988933
   [1m[36mSQL (0.4ms)[0m  [1m SELECT name
  FROM sqlite_master
@@ -7885,10 +7907,367 @@ Migrating to CreateAlcools (20100809094844)
 [0m
   [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100809094844')[0m
+>>>>>>> bb8c44bf136dd711e8f0c489d2af7edca6beeacf
   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+<<<<<<< HEAD
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered collection (0.0ms)
+Rendered alcools/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 38ms (Views: 9.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Thu Aug 12 16:45:19 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Rendered alcools/new.html.haml within layouts/application (153.4ms)
+Completed 200 OK in 163ms (Views: 158.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Thu Aug 12 16:45:28 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"vodka", "quantity"=>"50"}, "commit"=>"Create Alcool", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203"}
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "alcools" ("created_at", "limit", "name", "quantity", "quantity_command", "updated_at") VALUES ('2010-08-12 14:45:28.334864', NULL, 'vodka', 50, NULL, '2010-08-12 14:45:28.334864')[0m
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 25ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:45:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (6.3ms)
+Rendered alcools/index.html.haml within layouts/application (15.8ms)
+Completed 200 OK in 27ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Thu Aug 12 16:45:35 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"46", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "alcools" SET "quantity" = 4, "updated_at" = '2010-08-12 14:45:35.802214' WHERE ("alcools"."id" = 1)
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 18ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Thu Aug 12 16:45:35 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcools/command.html.haml within layouts/application (10.2ms)
+Completed 200 OK in 23ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 16:45:55 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"40", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+Rendered alcools/send_mail.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 16:48:10 +0200 2010
+
+ActionController::RoutingError (No route matches "/alcools/1/command/send"):
+  
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 16:50:46 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"40", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+Rendered alcools/send_mail.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 16:52:58 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"40", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed   in 5ms
+
+NoMethodError (undefined method `deliver_contact' for #<Class:0x10379a550>):
+  app/controllers/alcools_controller.rb:44:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.6ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.8ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 16:56:49 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"40", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 6ms
+
+NoMethodError (undefined method `deliver_contact' for #<Class:0x103593f40>):
+  app/controllers/alcools_controller.rb:44:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:59:10 +0200 2010
+  Processing by AlcoolsController#index as HTML
+Completed   in 5ms
+
+ActionView::MissingTemplate (Missing template /app\views\alcool\index.htm with {:locale=>[:en, :en], :handlers=>[:rjs, :rhtml, :erb, :rxml, :builder, :haml], :formats=>[:html]} in view paths "/Users/luis/rails/bar/app/views", "/Users/luis/rails/bar", "/"):
+  app/controllers/alcools_controller.rb:4:in `index'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 16:59:28 +0200 2010
+  Processing by AlcoolsController#index as HTML
+Completed   in 5ms
+
+ActionView::MissingTemplate (Missing template /app\views\alcool\index.htm with {:locale=>[:en, :en], :handlers=>[:rjs, :rhtml, :erb, :rxml, :builder, :haml], :formats=>[:html]} in view paths "/Users/luis/rails/bar/app/views", "/Users/luis/rails/bar", "/"):
+  app/controllers/alcools_controller.rb:4:in `index'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 17:00:03 +0200 2010
+  Processing by AlcoolsController#index as HTML
+Completed   in 6ms
+
+ActionView::MissingTemplate (Missing template /index.htm with {:locale=>[:en, :en], :handlers=>[:rjs, :rhtml, :erb, :rxml, :builder, :haml], :formats=>[:html]} in view paths "/Users/luis/rails/bar/app/views", "/Users/luis/rails/bar", "/"):
+  app/controllers/alcools_controller.rb:4:in `index'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 17:00:04 +0200 2010
+  Processing by AlcoolsController#index as HTML
+Completed   in 5ms
+
+ActionView::MissingTemplate (Missing template /index.htm with {:locale=>[:en, :en], :handlers=>[:rjs, :rhtml, :erb, :rxml, :builder, :haml], :formats=>[:html]} in view paths "/Users/luis/rails/bar/app/views", "/Users/luis/rails/bar", "/"):
+  app/controllers/alcools_controller.rb:4:in `index'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/alcools" for 127.0.0.1 at Thu Aug 12 17:00:32 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (10.2ms)
+Rendered alcools/index.html.haml within layouts/application (15.4ms)
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Thu Aug 12 17:00:38 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"2", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "alcools" SET "quantity" = 2, "updated_at" = '2010-08-12 15:00:38.548662' WHERE ("alcools"."id" = 1)
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 17ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Thu Aug 12 17:00:38 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcools/command.html.haml within layouts/application (10.5ms)
+Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:00:55 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed   in 6ms
+
+NoMethodError (undefined method `deliver_contact' for #<Class:0x103d8f0a0>):
+  app/controllers/alcools_controller.rb:44:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:01:13 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+Rendered text template (0.0ms)
+Redirected to 
+Completed   in 58ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/alcools_controller.rb:47:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.9ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:01:37 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:02:29 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:04:12 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 5ms
+
+NoMethodError (undefined method `contact' for #<Class:0x103824840>):
+  app/controllers/alcools_controller.rb:44:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:07:01 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed   in 10ms
+
+NoMethodError (undefined method `deliver_contact' for #<Class:0x10360ee70>):
+  app/controllers/alcools_controller.rb:44:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:09:16 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Completed   in 15ms
+
+NameError (undefined local variable or method `sent_at' for #<AlcoolsController:0x10344e720>):
+  app/controllers/alcools_controller.rb:45:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.7ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.6ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:09:37 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Completed   in 8ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  app/controllers/alcools_controller.rb:45:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.6ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:10:16 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Completed   in 13ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  app/controllers/alcools_controller.rb:45:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.5ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.2ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:11:14 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Completed   in 13ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  app/controllers/alcools_controller.rb:46:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.5ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:11:34 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.3ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:13:02 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"5", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Completed   in 9ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  app/controllers/alcools_controller.rb:46:in `send_mail'
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.5ms)
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:35:46 +0200 2010
+
+AbstractController::ActionNotFound (The action 'send_mail' could not be found for AlcoolsController):
+  
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.6ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 17:36:18 +0200 2010
+
+AbstractController::ActionNotFound (The action 'send_mail' could not be found for AlcoolsController):
+  
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+=======
   [1m[35mSQL (0.2ms)[0m   SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
@@ -8002,10 +8381,17 @@ Migrating to CreateAlcools (20100809094844)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
   [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
   [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+>>>>>>> bb8c44bf136dd711e8f0c489d2af7edca6beeacf
   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+<<<<<<< HEAD
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateAlcools (20100809094844)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "alcools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "name" varchar(255), "quantity" integer, "quantity_command" integer, "limit" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100809094844')
+=======
   [1m[35mSQL (1.6ms)[0m  CREATE TABLE "alcools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "quantity" integer, "quantity_command" integer, "limit_alcool" integer, "created_at" datetime, "updated_at" datetime) 
   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
  FROM sqlite_master
@@ -8250,16 +8636,33 @@ Migrating to CreateAlcools (20100809094844)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [1m[35mSQL (2.6ms)[0m  CREATE TABLE "alcools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "quantity" integer, "quantity_command" integer, "limit_alcool" integer, "created_at" datetime, "updated_at" datetime) 
+>>>>>>> bb8c44bf136dd711e8f0c489d2af7edca6beeacf
   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+<<<<<<< HEAD
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+=======
   [1m[35mSQL (1.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
   [1m[35mSQL (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+>>>>>>> bb8c44bf136dd711e8f0c489d2af7edca6beeacf
   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+<<<<<<< HEAD
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("alcools")
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Thu Aug 12 18:20:37 +0200 2010
+
+AbstractController::ActionNotFound (The action 'send_mail' could not be found for AlcoolsController):
+  
+
+Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.6ms)
+=======
   [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100809094844')[0m
+>>>>>>> bb8c44bf136dd711e8f0c489d2af7edca6beeacf
