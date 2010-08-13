@@ -9024,3 +9024,48 @@ Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 15:48:12 +0200 2010
 Rendered alcools/_alcool.html.haml (15.1ms)
 Rendered alcools/index.html.haml within layouts/application (22.1ms)
 Completed 200 OK in 39ms (Views: 27.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 15:50:41 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "alcools" SET "quantity" = 4, "updated_at" = '2010-08-13 13:50:41.547588' WHERE ("alcools"."id" = 1)
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 20ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Fri Aug 13 15:50:41 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcools/command.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 26ms (Views: 16.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Fri Aug 13 15:50:45 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"20", "authenticity_token"=>"6FoMTdO4nbk9TaF8BPxBZ34QyWunRGHLPK2uWj6YkME=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+
+Sent mail to njeol@hypios.com (84ms)
+Date: Fri, 13 Aug 2010 15:50:45 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c654db5f0a9c_5052818a097c53964@macbook-de-luis.local.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 115ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 15:50:46 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.5ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (14.3ms)
+Rendered alcools/index.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 35ms (Views: 25.7ms | ActiveRecord: 0.5ms)
