@@ -47,7 +47,8 @@ Feature: Manage_stock
     |         5         | vodka          |        50           |       55        |
     |         3         | wisky          |        60           |       63        |
 
-@wip
+
+  @wip
   Scenario Outline: Send a email to the alcool provider
     Given I have a <number_of_bottles> of "<name_of_alcool>" 
     And I am on the list of alcools
