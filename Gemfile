@@ -6,6 +6,13 @@ gem 'capybara'
 gem 'haml'
 gem 'webrat'
 gem 'rspec'
+gem 'ruby-debug'
+
+group :test do
+  gem 'email_spec'
+end
+
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

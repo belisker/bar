@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(:version => 20100809094844) do
 
   create_table "alcools", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "name"
     t.integer  "quantity"
     t.integer  "quantity_command"
-    t.integer   "limit"
+    t.integer  "limit_alcool"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
