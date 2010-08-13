@@ -10022,3 +10022,498 @@ Rendered alcools/_alcool.html.haml (9.9ms)
 Rendered alcools/index.html.haml within layouts/application (14.0ms)
 Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 0.4ms)
 >>>>>>> 347f2b88ce8098f0bcb5dec3436250e60a1c0fee
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateAlcools (20100809094844)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "alcools"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20100809094844'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateAlcools (20100809094844)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "alcools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "quantity" integer, "quantity_command" integer, "limit_alcool" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100809094844')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("alcools")
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:07 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered collection (0.0ms)
+Rendered alcools/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/alcools/new" for 127.0.0.1 at Fri Aug 13 16:47:10 +0200 2010
+  Processing by AlcoolsController#new as HTML
+Rendered alcools/new.html.haml within layouts/application (102.7ms)
+Completed 200 OK in 112ms (Views: 107.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:18 +0200 2010
+  Processing by AlcoolsController#create as HTML
+  Parameters: {"alcool"=>{"name"=>"wisky", "quantity"=>"10"}, "commit"=>"Create Alcool", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203"}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alcools" ("limit_alcool", "name", "quantity", "quantity_command") VALUES (NULL, 'wisky', 10, NULL)[0m
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 20ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:18 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (4.8ms)
+Rendered alcools/index.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 16:47:20 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "alcools" SET "quantity" = 9 WHERE ("alcools"."id" = 1)
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 14ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:20 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.4ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (8.4ms)
+Rendered alcools/index.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 16:47:21 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "alcools" SET "quantity" = 8 WHERE ("alcools"."id" = 1)[0m
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 112ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (9.2ms)
+Rendered alcools/index.html.haml within layouts/application (13.5ms)
+Completed 200 OK in 24ms (Views: 17.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 16:47:22 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "alcools" SET "quantity" = 7 WHERE ("alcools"."id" = 1)
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 14ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:22 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.4ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (7.4ms)
+Rendered alcools/index.html.haml within layouts/application (11.3ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 16:47:22 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "alcools" SET "quantity" = 6 WHERE ("alcools"."id" = 1)[0m
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 14ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:22 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.5ms)
+Rendered alcools/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 16:47:23 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "alcools" SET "quantity" = 5 WHERE ("alcools"."id" = 1)
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 14ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Fri Aug 13 16:47:23 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcools/command.html.haml within layouts/application (8.8ms)
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Fri Aug 13 16:47:28 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"123", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcool_mailer/order_command.html.haml (3.6ms)
+
+Sent mail to njeol@hypios.com (21ms)
+Date: Fri, 13 Aug 2010 16:47:29 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c655b0194ab_9374818b2820467b8@macbook-de-nico.home.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+5
+bouteille de
+wisky
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 77ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:47:29 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.3ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (7.4ms)
+Rendered alcools/index.html.haml within layouts/application (11.5ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 16:48:22 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "alcools" SET "quantity" = 4 WHERE ("alcools"."id" = 1)[0m
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 15ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Fri Aug 13 16:48:22 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcools/command.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 20ms (Views: 13.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Fri Aug 13 16:48:26 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"9787", "authenticity_token"=>"ovDOvftr3nexuSvijM0iBmsmttuaiSElN4OxH8h9IWE=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcool_mailer/order_command.html.haml (3.4ms)
+
+Sent mail to njeol@hypios.com (13ms)
+Date: Fri, 13 Aug 2010 16:48:26 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c655b3aa11dd_937481f28448468a@macbook-de-nico.home.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+4
+bouteille de
+wisky
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 40ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 16:48:26 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.4ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.3ms)
+Rendered alcools/index.html.haml within layouts/application (11.3ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/alcools/" for 127.0.0.1 at Fri Aug 13 17:05:10 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (71.3ms)
+Rendered alcools/index.html.haml within layouts/application (95.8ms)
+Completed 200 OK in 166ms (Views: 101.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/alcools/" for 127.0.0.1 at Fri Aug 13 17:05:14 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.4ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (7.4ms)
+Rendered alcools/index.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 17:05:17 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "alcools" SET "quantity" = 3 WHERE ("alcools"."id" = 1)[0m
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 52ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Fri Aug 13 17:05:18 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcools/command.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Fri Aug 13 17:05:23 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"120", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcool_mailer/order_command.html.haml (3.6ms)
+
+Sent mail to njeol@hypios.com (26ms)
+Date: Fri, 13 Aug 2010 17:05:24 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c655f3413f0f_1ae81abb52c9142e@macbook-de-nico.home.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+3
+bouteille de
+wisky
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 106ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 17:05:24 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.8ms)
+Rendered alcools/index.html.haml within layouts/application (12.4ms)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 17:08:04 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "alcools" SET "quantity" = 2 WHERE ("alcools"."id" = 1)
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 14ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Fri Aug 13 17:08:04 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcools/command.html.haml within layouts/application (7.9ms)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Fri Aug 13 17:08:23 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"4111", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcool_mailer/order_command.html.haml (3.4ms)
+
+Sent mail to njeol@hypios.com (13ms)
+Date: Fri, 13 Aug 2010 17:08:23 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c655fe7440ff_1ae81fc58ec9151c@macbook-de-nico.home.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+2
+bouteille de
+wisky
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 42ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 17:08:23 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.3ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (7.8ms)
+Rendered alcools/index.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 17:08:45 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "alcools" SET "quantity" = 1 WHERE ("alcools"."id" = 1)[0m
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 112ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Fri Aug 13 17:08:45 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcools/command.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 19ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Fri Aug 13 17:08:54 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"123", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.1ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcool_mailer/order_command.html.haml (3.3ms)
+
+Sent mail to njeol@hypios.com (12ms)
+Date: Fri, 13 Aug 2010 17:08:54 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c65600690b91_1ae81cc28e89164@macbook-de-nico.home.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+1
+bouteille de
+wisky
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 41ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 17:08:54 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (7.3ms)
+Rendered alcools/index.html.haml within layouts/application (11.2ms)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 17:13:21 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.4ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (7.3ms)
+Rendered alcools/index.html.haml within layouts/application (24.0ms)
+Completed 200 OK in 35ms (Views: 28.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Fri Aug 13 17:13:23 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "increase"=>"increase", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+  [1m[36mSQL (29.8ms)[0m  [1mUPDATE "alcools" SET "quantity" = 2 WHERE ("alcools"."id" = 1)[0m
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 44ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Fri Aug 13 17:13:23 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAlcool Load (0.1ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcools/command.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 24ms (Views: 17.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Fri Aug 13 17:13:27 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"123", "authenticity_token"=>"koeZihsYt9musVyNilqJM2H+u8hMF4ocCRykLMZ7oe4=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+Rendered alcool_mailer/order_command.html.haml (3.3ms)
+
+Sent mail to lrodrigues@hypios.com (12ms)
+Date: Fri, 13 Aug 2010 17:13:27 +0200
+From: aatest92@yahoo.com
+To: lrodrigues@hypios.com
+Message-ID: <4c6561177ca08_1ae819112a89173b@macbook-de-nico.home.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+2
+bouteille de
+wisky
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 40ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Fri Aug 13 17:13:27 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[35mAlcool Load (0.3ms)[0m  SELECT "alcools".* FROM "alcools"
+Rendered alcools/_alcool.html.haml (8.5ms)
+Rendered alcools/index.html.haml within layouts/application (17.7ms)
+Completed 200 OK in 28ms (Views: 22.2ms | ActiveRecord: 0.3ms)
