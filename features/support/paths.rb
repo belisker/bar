@@ -12,9 +12,11 @@ module NavigationHelpers
       '/'
     when /the list of alcools/
       alcools_path
-    when /the command page of the only alcool below the limit/
-      debugger
-      command_path(Alcool.where('quantity <= 10').first)
+    when /the formulaire of command/
+      command_path
+    # when /the command page of the only alcool below the limit/
+    #   debugger
+    #   command_path(Alcool.where('quantity <= 10').first)
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
