@@ -45,7 +45,7 @@ class AlcoolsController < ApplicationController
   def send_mail
   # if @alcool.save
     redirect_to alcools_path
-    UserMailer.order_alcool(@alcool).deliver
+    AlcoolMailer.order_alcool(@alcool).deliver
   # end
   end  
     
