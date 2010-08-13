@@ -5,7 +5,6 @@ class CreateAlcools < ActiveRecord::Migration
       t.integer :quantity
       t.integer :quantity_command
       t.integer :limit_alcool
-      t.timestamps
     end
   end
 
