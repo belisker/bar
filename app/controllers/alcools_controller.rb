@@ -43,9 +43,10 @@ class AlcoolsController < ApplicationController
   #   end
     
   def send_mail
+    @alcool = Alcool.find(params[:id])
   # if @alcool.save
+    AlcoolMailer.order_command(@alcool).deliver
     redirect_to alcools_path
-    AlcoolMailer.order_alcool(@alcool).deliver
   # end
   end  
     
