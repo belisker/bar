@@ -3,6 +3,14 @@
 = @alcool.name
   
 = form_for @alcool, :url => { :action => "send_mail"} do |f|
+  - if @alcool.errors.any? && !@alcool.name && !@alcool.quantity && !@acool.quantity_limit
+    #error_explanation
+      %h2
+        = pluralize(@alcool.errors.count, "error")
+        prohibited this alcool from being saved:
+      %ul
+        - @alcool.errors.full_messages.each do |msg|
+          %li= msg
   .field
     = f.label :quantity_command
     = text_field_tag :quantity_command
