@@ -29,10 +29,15 @@ class AlcoolsController < ApplicationController
     else
       @alcool.quantity -= params[:quantity].to_i
     end
-    @alcool.save
-    if @alcool.quantity <= @alcool.limit_alcool
-      redirect_to command_path
-    else  
+    if @alcool.quantity > 0
+      @alcool.save
+      if @alcool.quantity <= @alcool.limit_alcool
+        redirect_to command_path
+      else  
+        redirect_to alcools_path
+      end
+    else
+      render "error_quantity_under_limit"
       redirect_to alcools_path
     end
   end
