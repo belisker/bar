@@ -30,7 +30,7 @@ class AlcoolsController < ApplicationController
       @alcool.quantity -= params[:quantity].to_i
     end
     @alcool.save
-    if @alcool.quantity <= 5
+    if @alcool.quantity <= @alcool.limit_alcool
       redirect_to command_path
     else  
       redirect_to alcools_path
