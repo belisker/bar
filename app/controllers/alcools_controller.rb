@@ -37,7 +37,8 @@ class AlcoolsController < ApplicationController
         redirect_to alcools_path
       end
     else
-      render "error_quantity_under_limit"
+      flash[:error] = "Error quantity can't be inferior"
+      redirect_to alcools_path
     end
   end
   
