@@ -3,6 +3,6 @@ class AlcoolMailer < ActionMailer::Base
   
   def order_command(alcool)
     @alcool = alcool
-    mail(:to =>"lrodrigues@hypios.com", :subject => "Order alcool")
+    mail(:to =>"njeol@hypios.com", :subject => "Order alcool")
   end
 end
