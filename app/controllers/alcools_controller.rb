@@ -38,7 +38,6 @@ class AlcoolsController < ApplicationController
       end
     else
       render "error_quantity_under_limit"
-      redirect_to alcools_path
     end
   end
   
