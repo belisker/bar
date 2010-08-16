@@ -2,5 +2,9 @@
 
 = link_to 'add alcool', new_alcool_path
 
+#error
+  - if flash[:error]
+    = flash[:error]
+
 %h3 List Alcool
 = render @alcools
