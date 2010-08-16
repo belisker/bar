@@ -1,14 +1,7 @@
 %h2 Add Alcool
 
 = form_for @alcool do |f|
-  - if @alcool.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@alcool.errors.count, "error")
-        prohibited this alcool from being saved:
-      %ul
-        - @alcool.errors.full_messages.each do |msg|
-          %li= msg
+  = render "error"
   .field
     = f.label :name
     %br
