@@ -11624,3 +11624,97 @@ Rendered /Users/luis/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.0.rc/lib/ac
 =======
 >>>>>>> 9cab7a86dc1c6796c8fb17343bec291450d308be
 >>>>>>> f879dcf328d6b43aea3d04a697f0dabf83c3a30b
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Mon Aug 16 16:50:28 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"22", "authenticity_token"=>"lxtcKmSxUjB9xqfUJ3BAjvY38iyLUMONWw5Us9yR6r8=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcool_mailer/order_command.html.haml (1.3ms)
+
+Sent mail to njeol@hypios.com (391ms)
+Date: Mon, 16 Aug 2010 16:50:28 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c695034eb4d7_310d81abbd382252a@macbook-de-luis.local.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+22
+bouteille de
+jhgf
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 474ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Mon Aug 16 16:50:29 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.3ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (37.3ms)
+Rendered alcools/index.html.haml within layouts/application (67.1ms)
+Completed 200 OK in 111ms (Views: 102.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/alcools/1" for 127.0.0.1 at Mon Aug 16 16:52:53 +0200 2010
+  Processing by AlcoolsController#update as HTML
+  Parameters: {"quantity"=>"1", "authenticity_token"=>"lxtcKmSxUjB9xqfUJ3BAjvY38iyLUMONWw5Us9yR6r8=", "_snowman"=>"\342\230\203", "id"=>"1", "decrease"=>"decrease"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+  [1m[36mSQL (17.7ms)[0m  [1mUPDATE "alcools" SET "quantity" = 4 WHERE ("alcools"."id" = 1)[0m
+Redirected to http://localhost:3000/alcools/1/command
+Completed 302 Found in 51ms
+
+
+Started GET "/alcools/1/command" for 127.0.0.1 at Mon Aug 16 16:52:53 +0200 2010
+  Processing by AlcoolsController#command as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAlcool Load (0.2ms)[0m  SELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1
+Rendered alcools/command.html.haml within layouts/application (10.2ms)
+Completed 200 OK in 23ms (Views: 14.8ms | ActiveRecord: 18.0ms)
+
+
+Started POST "/alcools/1/command/send" for 127.0.0.1 at Mon Aug 16 16:52:57 +0200 2010
+  Processing by AlcoolsController#send_mail as HTML
+  Parameters: {"commit"=>"Update Alcool", "quantity_command"=>"56", "authenticity_token"=>"lxtcKmSxUjB9xqfUJ3BAjvY38iyLUMONWw5Us9yR6r8=", "_snowman"=>"\342\230\203", "id"=>"1"}
+  [1m[36mAlcool Load (0.2ms)[0m  [1mSELECT "alcools".* FROM "alcools" WHERE ("alcools"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "alcools" SET "quantity_command" = 56 WHERE ("alcools"."id" = 1)
+Rendered alcool_mailer/order_command.html.haml (1.2ms)
+
+Sent mail to njeol@hypios.com (264ms)
+Date: Mon, 16 Aug 2010 16:52:57 +0200
+From: aatest92@yahoo.com
+To: njeol@hypios.com
+Message-ID: <4c6950c957d5c_310d81b6b6842268a@macbook-de-luis.local.mail>
+Subject: Order alcool
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour,
+je voudrais commander
+56
+bouteille de
+jhgf
+<br>
+Merci
+Redirected to http://localhost:3000/alcools
+Completed 302 Found in 308ms
+
+
+Started GET "/alcools" for 127.0.0.1 at Mon Aug 16 16:52:57 +0200 2010
+  Processing by AlcoolsController#index as HTML
+  [1m[36mAlcool Load (0.5ms)[0m  [1mSELECT "alcools".* FROM "alcools"[0m
+Rendered alcools/_alcool.html.haml (13.2ms)
+Rendered alcools/index.html.haml within layouts/application (19.3ms)
+Completed 200 OK in 33ms (Views: 23.9ms | ActiveRecord: 0.5ms)
