@@ -5,11 +5,11 @@ class AlcoolsController < ApplicationController
   end
 
   def new
-    @alcool = Alcool.new()
+    @alcool = Alcool.new
   end
     
   def create
-    @alcool = Alcool.create(params[:alcool])
+    @alcool = Alcool.new(params[:alcool])
     if @alcool.save
       redirect_to alcools_path
     else

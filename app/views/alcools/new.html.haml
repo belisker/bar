@@ -1,20 +1,28 @@
 %h2 Add Alcool
 
 = form_for @alcool do |f|
-	.field
-		= f.label :name
-		%br
-		= f.text_field "name"
-	.field
-		= f.label :quantity
-		%br
-		= f.text_field "quantity", "size" => 3
-	.field
-		= f.label :limit_alcool
-		%br
-		= f.text_field "limit_alcool", "size" => 3
-	.field
-		= f.submit
+  - if @alcool.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@alcool.errors.count, "error")
+        prohibited this alcool from being saved:
+      %ul
+        - @alcool.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br
+    = f.text_field "name"
+  .field
+    = f.label :quantity
+    %br
+    = f.text_field "quantity", "size" => 3
+  .field
+    = f.label :limit_alcool
+    %br
+    = f.text_field "limit_alcool", "size" => 3
+  .field
+    = f.submit
 
 %br
 = link_to 'Back', alcools_path
