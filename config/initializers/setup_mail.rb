@@ -1,5 +1,5 @@
 ActionMailer::Base.smtp_settings = {
-  :adresse              => "smtp.yahoo.com",
+  :adresse              => "smtp.yahoo.fr",
   :port                 => 587,
   :domain               => "railscast.com",
   :user_name            => "aatest92",
